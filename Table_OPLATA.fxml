@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="650.0" prefWidth="1002.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="POLIKLINIKA.Table_OPLATAController">
+   <children>
+      <JFXTextField fx:id="filterField" layoutX="368.0" layoutY="43.0" prefHeight="31.0" prefWidth="610.0" promptText="Поиск">
+         <font>
+            <Font name="Century Gothic" size="15.0" />
+         </font>
+      </JFXTextField>
+      <AnchorPane fx:id="doc_b" layoutX="-1.0" prefHeight="650.0" prefWidth="362.0" style="-fx-background-color: #3f51b5;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-1.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <TextField fx:id="txt_id_doc" layoutX="29.0" layoutY="129.0" prefHeight="35.0" prefWidth="290.0" promptText="ID врача">
+               <font>
+                  <Font name="Century Gothic" size="15.0" />
+               </font></TextField>
+            <TextField fx:id="txt_sum" layoutX="28.0" layoutY="231.0" prefHeight="35.0" prefWidth="290.0" promptText="Сумма прихода">
+               <font>
+                  <Font name="Century Gothic" size="15.0" />
+               </font></TextField>
+            <TextField fx:id="txt_date" layoutX="29.0" layoutY="183.0" prefHeight="35.0" prefWidth="290.0" promptText="Дата">
+               <font>
+                  <Font name="Century Gothic" size="15.0" />
+               </font></TextField>
+            <TextField fx:id="txt_id_pac" layoutX="28.0" layoutY="83.0" prefHeight="35.0" prefWidth="290.0" promptText="ID пациента">
+               <font>
+                  <Font name="Century Gothic" size="15.0" />
+               </font></TextField>
+            <JFXButton layoutX="28.0" layoutY="502.0" onAction="#Add_users" prefHeight="35.0" prefWidth="140.0" text="Добавить" textFill="WHITE">
+               <font>
+                  <Font name="Century Gothic" size="15.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="189.0" layoutY="502.0" onAction="#UpdateTable" prefHeight="35.0" prefWidth="140.0" text="Обновить" textFill="WHITE">
+               <font>
+                  <Font name="Century Gothic" size="15.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="28.0" layoutY="555.0" onAction="#Edit" prefHeight="35.0" prefWidth="140.0" text="Редактировать" textFill="WHITE">
+               <font>
+                  <Font name="Century Gothic" size="15.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="189.0" layoutY="555.0" onAction="#Delete" prefHeight="35.0" prefWidth="140.0" text="Удалить" textFill="WHITE">
+               <font>
+                  <Font name="Century Gothic" size="15.0" />
+               </font>
+            </JFXButton>
+            <MenuBar layoutX="-6.0" layoutY="-2.0" prefHeight="32.0" prefWidth="370.0">
+              <menus>
+                <Menu mnemonicParsing="false" text="Справка">
+                  <items>
+                    <MenuItem mnemonicParsing="false" onAction="#Lekarstva" text="Лекарства" />
+                        <MenuItem mnemonicParsing="false" onAction="#tarif" text="Тариф" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+            
+         </children>
+      </AnchorPane>
+      <TableView fx:id="table_users" layoutX="368.0" layoutY="88.0" onMouseClicked="#getSelected" prefHeight="562.0" prefWidth="610.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="24.0">
+        <columns>
+          <TableColumn fx:id="col_id_pac" prefWidth="101.0" text="ID пациента" />
+          <TableColumn fx:id="col_id_doc" prefWidth="99.0" text="ID врача" />
+            <TableColumn fx:id="col_date" prefWidth="161.0" text="Дата" />
+            <TableColumn fx:id="col_sum" prefWidth="248.0" text="Сумма прихода" />
+        </columns>
+      </TableView>
+   </children> 
+</AnchorPane>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="650.0" prefWidth="1068.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="POLIKLINIKA.Table_LEKARSTVAController">
+    <children>
+      <JFXTextField fx:id="filterField" layoutX="368.0" layoutY="43.0" prefHeight="31.0" prefWidth="610.0" promptText="Поиск">
+         <font>
+            <Font name="Century Gothic" size="15.0" />
+         </font>
+      </JFXTextField>
+      <AnchorPane fx:id="doc_b" layoutX="-1.0" prefHeight="650.0" prefWidth="362.0" style="-fx-background-color: #3f51b5;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-1.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <TextField fx:id="txt_naimen" layoutX="29.0" layoutY="129.0" prefHeight="35.0" prefWidth="290.0" promptText="Наименование">
+               <font>
+                  <Font name="Century Gothic" size="15.0" />
+               </font></TextField>
+            <TextField fx:id="txt_izmer" layoutX="29.0" layoutY="181.0" prefHeight="35.0" prefWidth="290.0" promptText="Ед.измерения">
+               <font>
+                  <Font name="Century Gothic" size="15.0" />
+               </font></TextField>
+            <TextField fx:id="txt_cena" layoutX="28.0" layoutY="231.0" prefHeight="35.0" prefWidth="290.0" promptText="Цена">
+               <font>
+                  <Font name="Century Gothic" size="15.0" />
+               </font></TextField>
+            <TextField fx:id="txt_kol" layoutX="28.0" layoutY="282.0" prefHeight="35.0" prefWidth="290.0" promptText="Общее количество">
+               <font>
+                  <Font name="Century Gothic" size="15.0" />
+               </font></TextField>
+            <TextField fx:id="txt_id" layoutX="28.0" layoutY="83.0" prefHeight="35.0" prefWidth="290.0" promptText="ID">
+               <font>
+                  <Font name="Century Gothic" size="15.0" />
+               </font></TextField>
+            <JFXButton layoutX="28.0" layoutY="502.0" onAction="#Add_users" prefHeight="35.0" prefWidth="140.0" text="Добавить" textFill="WHITE">
+               <font>
+                  <Font name="Century Gothic" size="15.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="189.0" layoutY="502.0" onAction="#UpdateTable" prefHeight="35.0" prefWidth="140.0" text="Обновить" textFill="WHITE">
+               <font>
+                  <Font name="Century Gothic" size="15.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="28.0" layoutY="555.0" onAction="#Edit" prefHeight="35.0" prefWidth="140.0" text="Редактировать" textFill="WHITE">
+               <font>
+                  <Font name="Century Gothic" size="15.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="189.0" layoutY="555.0" onAction="#Delete" prefHeight="35.0" prefWidth="140.0" text="Удалить" textFill="WHITE">
+               <font>
+                  <Font name="Century Gothic" size="15.0" />
+               </font>
+            </JFXButton>
+            
+         </children>
+      </AnchorPane>
+      <TableView fx:id="table_users" layoutX="368.0" layoutY="88.0" onMouseClicked="#getSelected" prefHeight="562.0" prefWidth="610.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="90.0">
+        <columns>
+          <TableColumn fx:id="col_id" prefWidth="30.0" text="ID" />
+          <TableColumn fx:id="col_naimen" prefWidth="170.0" text="Наименование" />
+            <TableColumn fx:id="col_izmer" prefWidth="121.0" text="Ед.измерения" />
+            <TableColumn fx:id="col_cena" prefWidth="86.0" text="Цена" />
+            <TableColumn fx:id="col_kol" prefWidth="202.0" text="Общее количество" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

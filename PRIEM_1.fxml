@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="657.0" prefWidth="1331.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="POLIKLINIKA.PRIEMController1">
+   <children>
+      <AnchorPane layoutX="-1.0" layoutY="-1.0" prefHeight="658.0" prefWidth="363.0" style="-fx-background-color: #3f51b5;">
+         <children>
+            <TextField fx:id="txt_id_doc" layoutX="24.0" layoutY="62.0" prefHeight="35.0" prefWidth="290.0" promptText=" ID доктора">
+               <font>
+                  <Font name="Century Gothic" size="15.0" />
+               </font></TextField>
+            <TextField fx:id="txt_sp" layoutX="24.0" layoutY="150.0" prefHeight="35.0" prefWidth="290.0" promptText="Специальность">
+               <font>
+                  <Font name="Century Gothic" size="15.0" />
+               </font></TextField>
+            <TextField fx:id="txt_id_pac" layoutX="24.0" layoutY="202.0" prefHeight="35.0" prefWidth="290.0" promptText="ID пациента">
+               <font>
+                  <Font name="Century Gothic" size="15.0" />
+               </font></TextField>
+            <TextField fx:id="txt_data" layoutX="24.0" layoutY="294.0" prefHeight="35.0" prefWidth="290.0" promptText="Дата">
+               <font>
+                  <Font name="Century Gothic" size="15.0" />
+               </font></TextField>
+            <TextField fx:id="txt_time" layoutX="24.0" layoutY="350.0" prefHeight="35.0" prefWidth="290.0" promptText="Время ">
+               <font>
+                  <Font name="Century Gothic" size="15.0" />
+               </font></TextField>
+            <JFXButton layoutX="169.0" layoutY="564.0" onAction="#Delete" prefWidth="140.0" text="Удалить" textFill="WHITE">
+               <font>
+                  <Font name="Century Gothic" size="16.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="169.0" layoutY="498.0" onAction="#UpdateTable" prefWidth="140.0" text="Обновить" textFill="WHITE">
+               <font>
+                  <Font name="Century Gothic" size="16.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="24.0" layoutY="498.0" onAction="#Edit" prefWidth="140.0" text="Редактировать" textFill="WHITE">
+               <font>
+                  <Font name="Century Gothic" size="16.0" />
+               </font>
+            </JFXButton>
+            <TextField fx:id="txt_nd" layoutX="24.0" layoutY="108.0" prefHeight="31.0" prefWidth="290.0" promptText="ФИО" />
+            <TextField fx:id="txt_np" layoutX="24.0" layoutY="251.0" prefHeight="31.0" prefWidth="290.0" promptText="ФИО" />
+            <JFXButton layoutX="28.0" layoutY="564.0" onAction="#Add_users" prefHeight="32.0" prefWidth="131.0" text="Добавить" textFill="WHITE">
+               <font>
+                  <Font name="Century Gothic" size="16.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+      <TableView fx:id="table_users" layoutX="370.0" layoutY="88.0" onMouseClicked="#getSelected" prefHeight="569.0" prefWidth="952.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="9.0">
+        <columns>
+          <TableColumn fx:id="col_id_doc" prefWidth="42.0" text=" ID " />
+            <TableColumn fx:id="col_doc" prefWidth="187.0" text="Врач" />
+          <TableColumn fx:id="col_sp" prefWidth="186.0" text="Специальность" />
+            <TableColumn fx:id="col_id_pac" prefWidth="51.0" text="ID " />
+            <TableColumn fx:id="col_pac" prefWidth="233.0" text="Пациент" />
+            <TableColumn fx:id="col_date" minWidth="0.0" prefWidth="94.0" text="Дата" />
+            <TableColumn fx:id="col_time" prefWidth="156.0" text="Время " />
+        </columns>
+      </TableView>
+      <JFXTextField fx:id="filterField" layoutX="370.0" layoutY="45.0" prefHeight="31.0" prefWidth="945.0" promptText="Поиск">
+         <font>
+            <Font name="Century Gothic" size="15.0" />
+         </font>
+      </JFXTextField>
+   </children>
+</AnchorPane>
